@@ -1,2 +1,0 @@
-# shuprogram
-program management website

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<th:block th:fragment="table">
+
+    <link type="text/css" rel="stylesheet" th:href="@{#{web.site.host.url}+'/vendor/jsgrid/jsgrid.min.css'}"
+          href="jsgrid.min.css" />
+
+    <link type="text/css" rel="stylesheet" th:href="@{#{web.site.host.url}+'/vendor/jsgrid/jsgrid-theme.min.css'}"
+          href="jsgrid-theme.min.css" />
+
+    <script th:src="@{#{web.site.host.url}+'/vendor/jsgrid/jsgrid.min.js'}"
+            src="jsgrid.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').DataTable({
+                responsive:true
+            });
+
+            var clients = [
+                { "Name": "Otto Clay", "Age": 25, "Country": 1, "Address": "Ap #897-1459 Quam Avenue", "Married": false },
+                { "Name": "Connor Johnston", "Age": 45, "Country": 2, "Address": "Ap #370-4647 Dis Av.", "Married": true },
+                { "Name": "Lacey Hess", "Age": 29, "Country": 3, "Address": "Ap #365-8835 Integer St.", "Married": false },
+                { "Name": "Timothy Henson", "Age": 56, "Country": 1, "Address": "911-5143 Luctus Ave", "Married": true },
+                { "Name": "Ramona Benton", "Age": 32, "Country": 3, "Address": "Ap #614-689 Vehicula Street", "Married": false }
+            ];
+
+            var countries = [
+                { Name: "", Id: 0 },
+                { Name: "United States", Id: 1 },
+                { Name: "Canada", Id: 2 },
+                { Name: "United Kingdom", Id: 3 }
+            ];
+
+            $("#jsG").jsGrid({
+                width: "100%",
+                height: "400px",
+
+                autoload: true,
+                paging:true,
+                pageSize:5,
+                pageButtonCount: 5,
+                pageIndex:1,
+
+                inserting: false,
+                editing: true,
+                sorting: true,
+                paging: true,
+
+
+
+                controller:{
+                    loadData:function (filter) {
+                        return $.ajax({
+                            type:"GET",
+                            url:"http://localhost:8080/api/projects",
+                            data: filter
+                        });
+
+                    },
+
+                    insertItem:function (item) {
+                        return $.ajax({
+                            type:"POST",
+                            url:"http://localhost:8080/api/projects",
+                            data: item
+                        });
+
+                    },
+                    updateItem:function (item) {
+                        return $.ajax({
+                            type:"PUT",
+                            url:"http://localhost:8080/api/projects",
+                            data: item
+                        });
+                    },
+                    deleteItem:function (item) {
+                        return $.ajax({
+                            type:"POST",
+                            url:"http://localhost:8080/api/projects/delete",
+                            data: item
+                        });
+                    },
+                },
+
+                fields: [
+                    { name: "projectId", type: "number", width: 20 },
+                    { name: "isPassed", type: "number", width: 20,validate:"required" },
+                    { name: "projectName", type: "text", width: 30, validate: "required"},
+                    { name: "fileUrl", type: "text", width: 30},
+                    { type: "control" }
+                ]
+            });
+        });
+    </script>
+
+</th:block>
+
+
+</body>
+</html>

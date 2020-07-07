@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="zxx" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>开始申报</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+  <!-- CSS here -->
+      <link rel="stylesheet" th:href="@{#{web.root}+'assets/css/bootstrap.min.css'}"
+            href="assets/css/bootstrap.min.css">
+      <link rel="stylesheet" th:href="@{#{web.root}+'assets/css/owl.carousel.min.css'}"
+            href="assets/css/owl.carousel.min.css">
+      <link rel="stylesheet" th:href="@{#{web.root}+'assets/css/flaticon.css'}"
+            href="assets/css/flaticon.css">
+      <link rel="stylesheet" th:href="@{#{web.root}+'assets/css/slicknav.css'}"
+            href="assets/css/slicknav.css">
+      <link rel="stylesheet" th:href="@{#{web.root}+'assets/css/animate.min.css'}"
+            href="assets/css/animate.min.css">
+      <link rel="stylesheet" th:href="@{#{web.root}+'assets/css/magnific-popup.css'}"
+            href="assets/css/magnific-popup.css">
+      <link rel="stylesheet" th:href="@{#{web.root}+'assets/css/fontawesome-all.min.css'}"
+            href="assets/css/fontawesome-all.min.css">
+      <link rel="stylesheet" th:href="@{#{web.root}+'assets/css/themify-icons.css'}"
+            href="assets/css/themify-icons.css">
+      <link rel="stylesheet" th:href="@{#{web.root}+'assets/css/slick.css'}"
+            href="assets/css/slick.css">
+      <link rel="stylesheet" th:href="@{#{web.root}+'assets/css/nice-select.css'}"
+            href="assets/css/nice-select.css">
+      <link rel="stylesheet" th:href="@{#{web.root}+'assets/css/style.css'}"
+            href="assets/css/style.css">
+</head>
+
+<body>
+
+  <header th:include="customer/fragments/header::header">
+    <!-- Header Start -->
+    <!-- Header End -->
+  </header>
+
+  <!-- slider Area Start-->
+  <div class="slider-area ">
+    <!-- Mobile Menu -->
+    <div class="single-slider slider-height2 d-flex align-items-center" th:data-background="@{#{web.root}+'assets/img/hero/category.jpg'}"
+         data-background="assets/img/hero/category.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap text-center">
+                        <h2>项目上传</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- slider Area End-->
+
+  <!--================Checkout Area =================-->
+  <section class="checkout_area section_padding">
+    <div class="container">
+      <div class="returning_customer">
+            <p>
+                请慎重填写以下项目相关信息，如有错误无法修改！
+            </p>
+            <form role="form" class="row contact_form" action="/applicant/submit/upload" method="post"
+              novalidate="novalidate" enctype="multipart/form-data">
+
+                <div class="col-md-6 form-group p_star">
+                    <input type="text" class="form-control" name="programName"/>
+                    <span class="placeholder" data-placeholder="项目名称"></span>
+                </div>
+
+                <div class="col-md-6 form-group p_star">
+
+                    <input type="text" class="form-control" name="programIntroduction"/>
+                    <span class="placeholder" data-placeholder="项目介绍"></span>
+                </div>
+
+                <div class="col-md-6 form-group p_star">
+
+                    <input type="text" class="form-control" name="programIntroduction"/>
+                    <span class="placeholder" data-placeholder="申报等级"></span>
+                </div>
+
+                <div class="col-md-6 form-group p_star">
+
+                    <input type="text" class="form-control" name="programIntroduction"/>
+                    <span class="placeholder" data-placeholder="风险评估"></span>
+                </div>
+
+                <div class="col-md-6 form-group p_star">
+                    <input type="text" class="form-control" name="programIntroduction"/>
+                    <span class="placeholder" data-placeholder="预计实施方案"></span>
+                </div>
+
+                <div class="col-md-6 form-group p_star">
+                    <input type="text" class="form-control" name="programIntroduction"/>
+                    <span class="placeholder" data-placeholder="预计年限"></span>
+                </div>
+
+                <div class="col-md-6 form-group p_star">
+                 <input type="text"  readonly="readonly" class="form-control" name="personInChargeName"/>
+                <span class="placeholder" th:data-placeholder="'负责人姓名：'+${currentUser.getUserName()}"
+                      data-placeholder="项目负责人姓名"></span>
+            </div>
+
+            <div class="col-md-6 form-group p_star">
+                <input type="text" readonly="readonly" class="form-control" name="personInChargeEmail"/>
+                <span class="placeholder" th:data-placeholder="'联系方式：'+${currentUser.getEmail()}"
+                      data-placeholder="项目负责人联系方式"></span>
+
+            </div>
+
+                <p>
+                项目主要照片：<input type="file" name="programImage" multiple="multiple"/>
+                </p>
+                <p>
+                项目文件：<input type="file" name="programFile"/>
+                </p>
+                <br>
+                <br>
+                <br>
+            <div class="col-md-12 form-group">
+                <button class="btn btn-primary btn-user btn-block">
+                 提交
+                </button>
+          </div>
+        </form>
+        </div>
+    </div>
+  </section>
+
+
+
+<!--
+      <div class="cupon_area">
+        <div class="check_title">
+          <h2>
+            Have a coupon?
+            <a href="#">Click here to enter your code</a>
+          </h2>
+        </div>
+        <input type="text" placeholder="Enter coupon code" />
+        <a class="tp_btn" href="#">Apply Coupon</a>
+      </div>
+      <div class="billing_details">
+        <div class="row">
+          <div class="col-lg-8">
+            <h3>Billing Details</h3>
+            <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+              <div class="col-md-6 form-group p_star">
+                <input type="text" class="form-control" id="first" name="name" />
+                <span class="placeholder" data-placeholder="First name"></span>
+              </div>
+              <div class="col-md-6 form-group p_star">
+                <input type="text" class="form-control" id="last" name="name" />
+                <span class="placeholder" data-placeholder="Last name"></span>
+              </div>
+              <div class="col-md-12 form-group">
+                <input type="text" class="form-control" id="company" name="company" placeholder="Company name" />
+              </div>
+              <div class="col-md-6 form-group p_star">
+                <input type="text" class="form-control" id="number" name="number" />
+                <span class="placeholder" data-placeholder="Phone number"></span>
+              </div>
+              <div class="col-md-6 form-group p_star">
+                <input type="text" class="form-control" id="email" name="compemailany" />
+                <span class="placeholder" data-placeholder="Email Address"></span>
+              </div>
+              <div class="col-md-12 form-group p_star">
+                <select class="country_select">
+                  <option value="1">Country</option>
+                  <option value="2">Country</option>
+                  <option value="4">Country</option>
+                </select>
+              </div>
+              <div class="col-md-12 form-group p_star">
+                <input type="text" class="form-control" id="add1" name="add1" />
+                <span class="placeholder" data-placeholder="Address line 01"></span>
+              </div>
+              <div class="col-md-12 form-group p_star">
+                <input type="text" class="form-control" id="add2" name="add2" />
+                <span class="placeholder" data-placeholder="Address line 02"></span>
+              </div>
+              <div class="col-md-12 form-group p_star">
+                <input type="text" class="form-control" id="city" name="city" />
+                <span class="placeholder" data-placeholder="Town/City"></span>
+              </div>
+              <div class="col-md-12 form-group p_star">
+                <select class="country_select">
+                  <option value="1">District</option>
+                  <option value="2">District</option>
+                  <option value="4">District</option>
+                </select>
+              </div>
+              <div class="col-md-12 form-group">
+                <input type="text" class="form-control" id="zip" name="zip" placeholder="Postcode/ZIP" />
+              </div>
+              <div class="col-md-12 form-group">
+                <div class="creat_account">
+                  <input type="checkbox" id="f-option2" name="selector" />
+                  <label for="f-option2">Create an account?</label>
+                </div>
+              </div>
+              <div class="col-md-12 form-group">
+                <div class="creat_account">
+                  <h3>Shipping Details</h3>
+                  <input type="checkbox" id="f-option3" name="selector" />
+                  <label for="f-option3">Ship to a different address?</label>
+                </div>
+                <textarea class="form-control" name="message" id="message" rows="1"
+                  placeholder="Order Notes"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-4">
+            <div class="order_box">
+              <h2>Your Order</h2>
+              <ul class="list">
+                <li>
+                  <a href="#">Product
+                    <span>Total</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Fresh Blackberry
+                    <span class="middle">x 02</span>
+                    <span class="last">$720.00</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Fresh Tomatoes
+                    <span class="middle">x 02</span>
+                    <span class="last">$720.00</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Fresh Brocoli
+                    <span class="middle">x 02</span>
+                    <span class="last">$720.00</span>
+                  </a>
+                </li>
+              </ul>
+              <ul class="list list_2">
+                <li>
+                  <a href="#">Subtotal
+                    <span>$2160.00</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Shipping
+                    <span>Flat rate: $50.00</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Total
+                    <span>$2210.00</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="payment_item">
+                <div class="radion_btn">
+                  <input type="radio" id="f-option5" name="selector" />
+                  <label for="f-option5">Check payments</label>
+                  <div class="check"></div>
+                </div>
+                <p>
+                  Please send a check to Store Name, Store Street, Store Town,
+                  Store State / County, Store Postcode.
+                </p>
+              </div>
+              <div class="payment_item active">
+                <div class="radion_btn">
+                  <input type="radio" id="f-option6" name="selector" />
+                  <label for="f-option6">Paypal </label>
+                  <img src="img/product/single-product/card.jpg" alt="" />
+                  <div class="check"></div>
+                </div>
+                <p>
+                  Please send a check to Store Name, Store Street, Store Town,
+                  Store State / County, Store Postcode.
+                </p>
+              </div>
+              <div class="creat_account">
+                <input type="checkbox" id="f-option4" name="selector" />
+                <label for="f-option4">I’ve read and accept the </label>
+                <a href="#">terms & conditions*</a>
+              </div>
+              <a class="btn_3" href="#">Proceed to Paypal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+  <!--================End Checkout Area =================-->
+  <footer th:include="customer/fragments/footer::footer">
+    <!-- Footer Start--><!-- Footer bottom -->
+    <!-- Footer End-->
+  </footer>
+
+	<!-- JS here -->
+		<!-- All JS Custom Plugins Link Here here -->
+    <script th:src="@{#{web.root}+'assets/js/vendor/modernizr-3.5.0.min.js'}"
+            src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+    <script th:src="@{#{web.root}+'assets/js/vendor/jquery-1.12.4.min.js'}"
+            src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/popper.min.js'}"
+            src="./assets/js/popper.min.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/bootstrap.min.js'}"
+            src="./assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script th:src="@{#{web.root}+'assets/js/jquery.slicknav.min.js'}"
+            src="./assets/js/jquery.slicknav.min.js"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script th:src="@{#{web.root}+'assets/js/owl.carousel.min.js'}"
+            src="./assets/js/owl.carousel.min.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/slick.min.js'}"
+            src="./assets/js/slick.min.js"></script>
+
+		<!-- One Page, Animated-HeadLin -->
+    <script th:src="@{#{web.root}+'assets/js/wow.min.js'}"
+            src="./assets/js/wow.min.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/animated.headline.js'}"
+            src="./assets/js/animated.headline.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/jquery.magnific-popup.js'}"
+            src="./assets/js/jquery.magnific-popup.js"></script>
+
+		<!-- Scrollup, nice-select, sticky -->
+    <script th:src="@{#{web.root}+'assets/js/jquery.scrollUp.min.js'}"
+            src="./assets/js/jquery.scrollUp.min.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/jquery.nice-select.min.js'}"
+            src="./assets/js/jquery.nice-select.min.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/jquery.sticky.js'}"
+            src="./assets/js/jquery.sticky.js"></script>
+    
+    <!-- contact js -->
+    <script th:src="@{#{web.root}+'assets/js/contact.js'}"
+            src="./assets/js/contact.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/jquery.form.js'}"
+            src="./assets/js/jquery.form.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/jquery.validate.min.js'}"
+            src="./assets/js/jquery.validate.min.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/mail-script.js'}"
+            src="./assets/js/mail-script.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/jquery.ajaxchimp.min.js'}"
+            src="./assets/js/jquery.ajaxchimp.min.js"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+    <script th:src="@{#{web.root}+'assets/js/plugins.js'}"
+            src="./assets/js/plugins.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/main.js'}"
+            src="./assets/js/main.js"></script>
+      
+</body>
+
+</html>

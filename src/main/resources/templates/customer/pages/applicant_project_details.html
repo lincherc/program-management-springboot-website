@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="zxx" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>申请项目详细信息</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{#{web.site.host.url}+'/assets/img/favicon.ico'}"
+          href="assets/img/favicon.ico">
+
+    <!-- CSS here
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/css/flaticon.css">
+
+        <link rel="stylesheet" href="assets/css/slicknav.css">
+        <link rel="stylesheet" href="assets/css/animate.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="assets/css/themify-icons.css">
+        <link rel="stylesheet" href="assets/css/slick.css">
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    -->
+
+
+    <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/bootstrap.min.css'}"
+          href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/owl.carousel.min.css'}"
+          href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/flaticon.css'}"
+          href="assets/css/flaticon.css">
+    <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/slicknav.css'}"
+          href="assets/css/slicknav.css">
+    <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/animate.min.css'}"
+          href="assets/css/animate.min.css">
+    <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/magnific-popup.css'}"
+          href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/fontawesome-all.min.css'}"
+          href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/themify-icons.css'}"
+          href="assets/css/themify-icons.css">
+    <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/slick.css'}"
+          href="assets/css/slick.css">
+    <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/nice-select.css'}"
+          href="assets/css/nice-select.css">
+    <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/style.css'}"
+          href="assets/css/style.css">
+
+</head>
+    
+
+<body>
+
+    <header th:include="customer/fragments/header::header">
+        <!-- Header Start -->
+
+        <!-- Header End -->
+    </header>
+
+    <!-- slider Area Start-->
+    <div class="slider-area ">
+        <!-- Mobile Menu -->
+        <div class="single-slider slider-height2 d-flex align-items-center" th:data-background="@{#{web.site.host.url}+'/assets/img/hero/category.jpg'}"
+             data-background="assets/img/hero/category.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2 th:text="项目审核信息">项目已审核</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider Area End-->
+
+  <!--================Single Product Area =================-->
+  <div class="product_image_area">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="product_img_slide owl-carousel">
+            <div th:each="programPhoto: ${program.getProjectPhotos()}" class="single_product_img">
+              <img th:src="@{#{web.site.host.url}+'/programstorehouse/image/'+${programPhoto.getImageUrl()}}"
+                   src="assets/img/product/single_product.png" alt="图片显示异常" class="img-fluid">
+            </div>
+              <!--Photo.
+              th:src="@{#{web.site.host.url}+'/programstorehouse/image/'+${program.getImageUrl()}}"
+
+                <div th:each="program: ${allPrograms}" class="col-lg-6 col-sm-6">
+
+            <div class="single_product_img">
+              <img src="assets/img/product/single_product.png" alt="#" class="img-fluid">
+            </div>
+            <div class="single_product_img">
+              <img src="assets/img/product/single_product.png" alt="#" class="img-fluid">
+            </div>
+              -->
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="single_product_text text-center">
+            <h3 th:text="${program.getProjectName()}">Foam filling cotton slow <br>
+                rebound pillows</h3>
+              项目负责人姓名：<p th:text="${program.getPersonInCharge().getUserName()}">
+                  Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness. Credibly innovate granular internal or organic sources whereas high standards in web-readiness. Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas. with optimal networks.
+              </p>
+              项目负责人联系方式：<p th:text="${program.getPersonInCharge().getEmail()}">
+                  Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness. Credibly innovate granular internal or organic sources whereas high standards in web-readiness. Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas. with optimal networks.
+              </p>
+            项目简介：<p th:text="${program.getProjectIntroduction()}">
+                Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness. Credibly innovate granular internal or organic sources whereas high standards in web-readiness. Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas. with optimal networks.
+            </p>
+<!--
+            <div class="card_area">
+                <div class="product_count_area">
+                    <p>Quantity</p>
+                    <div class="product_count d-inline-block">
+                        <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
+                        <input class="product_count_item input-number" type="text" value="1" min="0" max="10">
+                        <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
+                    </div>
+                    <p>$5</p>
+                </div>
+                -->
+                <br>
+              <br>
+              <br>
+              <div class="add_to_cart">
+                  <li th:text="${isPassed}"
+                     href="#" class="btn_3">审核通过
+                             </li>
+            </div>
+     <!--             <br>
+                <div class="add_to_cart">
+                    <a th:href="${(#mvc.url('EC#programIsPassed').arg(0,program.getProjectId()).arg(1,-1)).build()}"
+                       href="#" class="btn_3">不合格
+                    </a>
+                </div>
+                -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--================End Single Product Area =================-->
+   <!-- subscribe part here -->
+    <!--
+   <section class="subscribe_part section_padding">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-lg-8">
+                  <div class="subscribe_part_content">
+                      <h2>Get promotions & updates!</h2>
+                      <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources credibly innovate granular internal .</p>
+                      <div class="subscribe_form">
+                          <input type="email" placeholder="Enter your mail">
+                          <a href="#" class="btn_1">Subscribe</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+ subscribe part end -->
+    <footer th:include="customer/fragments/footer::footer">
+        <!--   Footer Start-->
+        <!-- Footer End-->
+    </footer>
+
+<!-- JS here -->
+
+
+    <!-- swiper js -->
+    <script th:src="@{#{web.site.host.url}+'/assets/js/swiper.min.js'}"
+            src="./assets/js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script th:src="@{#{web.site.host.url}+'/assets/js/mixitup.min.js'}"
+            src="./assets/js/mixitup.min.js"></script>
+    <script th:src="@{#{web.site.host.url}+'/assets/js/jquery.counterup.min.js'}"
+            src="./assets/js/jquery.counterup.min.js"></script>
+    <script th:src="@{#{web.site.host.url}+'/assets/js/waypoints.min.js'}"
+            src="./assets/js/waypoints.min.js"></script>
+
+
+
+
+    <script th:src="@{#{web.site.host.url}+'/assets/js/vendor/modernizr-3.5.0.min.js'}"
+            src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+
+    <!-- Jquery, Popper, Bootstrap -->
+    <script th:src="@{#{web.site.host.url}+'/assets/js/vendor/jquery-1.12.4.min.js'}"
+            src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+
+    <script th:src="@{#{web.site.host.url}+'/assets/js/popper.min.js'}"
+            src="./assets/js/popper.min.js"></script>
+
+    <script th:src="@{#{web.site.host.url}+'/assets/js/bootstrap.min.js'}"
+            src="./assets/js/bootstrap.min.js"></script>
+
+    <!-- Jquery Mobile Menu -->
+    <script th:src="@{#{web.site.host.url}+'/assets/js/jquery.slicknav.min.js'}"
+            src="./assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script th:src="@{#{web.site.host.url}+'/assets/js/owl.carousel.min.js'}"
+            src="./assets/js/owl.carousel.min.js"></script>
+
+    <script th:src="@{#{web.site.host.url}+'/assets/js/slick.min.js'}"
+            src="./assets/js/slick.min.js"></script>
+
+    <!-- One Page, Animated-HeadLin -->
+    <script th:src="@{#{web.site.host.url}+'/assets/js/wow.min.js'}"
+            src="./assets/js/wow.min.js"></script>
+
+    <script th:src="@{#{web.site.host.url}+'/assets/js/animated.headline.js'}"
+            src="./assets/js/animated.headline.js"></script>
+
+    <!-- Scrollup, nice-select, sticky -->
+    <script th:src="@{#{web.site.host.url}+'/assets/js/jquery.scrollUp.min.js'}"
+            src="./assets/js/jquery.scrollUp.min.js"></script>
+
+    <script th:src="@{#{web.site.host.url}+'/assets/js/jquery.nice-select.min.js'}"
+            src="./assets/js/jquery.nice-select.min.js"></script>
+
+    <script th:src="@{#{web.site.host.url}+'/assets/js/jquery.sticky.js'}"
+            src="./assets/js/jquery.sticky.js"></script>
+
+    <script th:src="@{#{web.site.host.url}+'/assets/js/jquery.magnific-popup.js'}"
+            src="./assets/js/jquery.magnific-popup.js"></script>
+
+    <!-- contact js -->
+    <script th:src="@{#{web.site.host.url}+'/assets/js/contact.js'}"
+            src="./assets/js/contact.js"></script>
+
+    <script th:src="@{#{web.site.host.url}+'/assets/js/jquery.form.js'}"
+            src="./assets/js/jquery.form.js"></script>
+
+    <script th:src="@{#{web.site.host.url}+'/assets/js/jquery.validate.min.js'}"
+            src="./assets/js/jquery.validate.min.js"></script>
+
+    <script th:src="@{#{web.site.host.url}+'/assets/js/mail-script.js'}"
+            src="./assets/js/mail-script.js"></script>
+
+    <script th:src="@{#{web.site.host.url}+'/assets/js/jquery.ajaxchimp.min.js'}"
+            src="./assets/js/jquery.ajaxchimp.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script th:src="@{#{web.site.host.url}+'/assets/js/plugins.js'}"
+            src="./assets/js/plugins.js"></script>
+    <script th:src="@{#{web.site.host.url}+'/assets/js/main.js'}"
+            src="./assets/js/main.js"></script>
+
+</body>
+
+</html>

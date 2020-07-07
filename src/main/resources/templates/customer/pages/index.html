@@ -1,0 +1,237 @@
+<!doctype html>
+<html class="no-js" lang="zxx"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>上大创新项目平台</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+
+		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+		<!-- CSS here
+            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+            <link rel="stylesheet" href="assets/css/flaticon.css">
+            <link rel="stylesheet" href="assets/css/slicknav.css">
+            <link rel="stylesheet" href="assets/css/animate.min.css">
+            <link rel="stylesheet" href="assets/css/magnific-popup.css">
+            <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+            <link rel="stylesheet" href="assets/css/themify-icons.css">
+            <link rel="stylesheet" href="assets/css/slick.css">
+            <link rel="stylesheet" href="assets/css/nice-select.css">
+            <link rel="stylesheet" href="assets/css/style.css">
+        -->
+        <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/bootstrap.min.css'}"
+              href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/owl.carousel.min.css'}"
+              href="assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/flaticon.css'}"
+              href="assets/css/flaticon.css">
+        <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/slicknav.css'}"
+              href="assets/css/slicknav.css">
+        <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/animate.min.css'}"
+              href="assets/css/animate.min.css">
+        <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/magnific-popup.css'}"
+              href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/fontawesome-all.min.css'}"
+              href="assets/css/fontawesome-all.min.css">
+        <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/themify-icons.css'}"
+              href="assets/css/themify-icons.css">
+        <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/slick.css'}"
+              href="assets/css/slick.css">
+        <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/nice-select.css'}"
+              href="assets/css/nice-select.css">
+        <link rel="stylesheet" th:href="@{#{web.site.host.url}+'/assets/css/style.css'}"
+              href="assets/css/style.css">
+
+
+
+   </head>
+
+   <body>
+       
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+<!--
+    <header th:include="customer/fragments/header::header"></header>
+    -->
+
+    <main>
+
+        <!-- slider Area Start -->
+        <div class="slider-area ">
+            <!-- Mobile Menu -->
+            <div class="slider-active">
+                <div class="single-slider slider-height" data-background="assets/img/hero/h1_hero.jpg">
+                    <div class="container">
+                        <div class="row d-flex align-items-center justify-content-between">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-none d-md-block">
+                                <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
+                                    <img src="assets/img/hero/hero_man.png" alt="图片显示失败">
+                                </div>
+                            </div>
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8">
+                                <div class="hero__caption">
+                                    <span data-animation="fadeInRight" data-delay=".4s">project management</span>
+                                    <h1 data-animation="fadeInRight" data-delay=".6s"> 创新项目<br> 申报平台</h1>
+                                    <p data-animation="fadeInRight" data-delay=".8s">上大喊你申报创新项目了！</p>
+                                    <!-- Hero-btn -->
+                                    <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
+                                        <a th:href="@{'/applicant/submit'}" href="#" class="btn hero-btn">项目负责人，立刻开始申报</a>
+                                    </div>
+                                    <br>
+
+                                    <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
+                                        <a th:href="@{'/checker/checklist'}" href="industries.html" class="btn hero-btn">审核员，立刻开始审批</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-slider slider-height" data-background="assets/img/hero/h1_hero.jpg">
+                    <div class="container">
+                        <div class="row d-flex align-items-center justify-content-between">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-none d-md-block">
+                                <div class="hero__img" data-animation="bounceIn" data-delay=".4s">
+                                    <img src="assets/img/hero/hero_man.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8">
+                                <div class="hero__caption">
+                                    <span data-animation="fadeInRight" data-delay=".4s">60% Discount</span>
+                                    <h1 data-animation="fadeInRight" data-delay=".6s">Winter <br> Collection</h1>
+                                    <p data-animation="fadeInRight" data-delay=".8s">Best Cloth Collection By 2020!</p>
+                                    <!-- Hero-btn -->
+                                    <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
+                                        <a href="industries.html" class="btn hero-btn">Shop Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+   <footer th:include="customer/fragments/footer::footer">
+
+       <!-- Footer Start-->
+
+       <!-- Footer End-->
+
+   </footer>
+   
+	<!-- JS here -->
+	
+		<!-- All JS Custom Plugins Link Here here
+        <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>-->
+		<!-- Jquery, Popper, Bootstrap
+		<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="./assets/js/popper.min.js"></script>
+        <script src="./assets/js/bootstrap.min.js"></script>-->
+	    <!-- Jquery Mobile Menu
+        <script src="./assets/js/jquery.slicknav.min.js"></script> -->
+
+		<!-- Jquery Slick , Owl-Carousel Plugins
+        <script src="./assets/js/owl.carousel.min.js"></script>
+        <script src="./assets/js/slick.min.js"></script>
+    -->
+		<!-- One Page, Animated-HeadLin
+        <script src="./assets/js/wow.min.js"></script>
+		<script src="./assets/js/animated.headline.js"></script>
+        <script src="./assets/js/jquery.magnific-popup.js"></script>
+    -->
+		<!-- Scrollup, nice-select, sticky
+        <script src="./assets/js/jquery.scrollUp.min.js"></script>
+        <script src="./assets/js/jquery.nice-select.min.js"></script>
+		<script src="./assets/js/jquery.sticky.js"></script>
+    -->
+        <!-- contact js
+        <script src="./assets/js/contact.js"></script>
+        <script src="./assets/js/jquery.form.js"></script>
+        <script src="./assets/js/jquery.validate.min.js"></script>
+        <script src="./assets/js/mail-script.js"></script>
+        <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+    -->
+		<!-- Jquery Plugins, main Jquery
+        <script src="./assets/js/plugins.js"></script>
+        <script src="./assets/js/main.js"></script>
+    -->
+    <!-- JS here -->
+
+    <!-- All JS Custom Plugins Link Here here -->
+    <script th:src="@{#{web.root}+'assets/js/vendor/modernizr-3.5.0.min.js'}"
+            src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+
+    <!-- Jquery, Popper, Bootstrap -->
+    <script th:src="@{#{web.root}+'assets/js/vendor/jquery-1.12.4.min.js'}"
+            src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/popper.min.js'}"
+            src="./assets/js/popper.min.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/bootstrap.min.js'}"
+            src="./assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script th:src="@{#{web.root}+'assets/js/jquery.slicknav.min.js'}"
+            src="./assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script th:src="@{#{web.root}+'assets/js/owl.carousel.min.js'}"
+            src="./assets/js/owl.carousel.min.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/slick.min.js'}"
+            src="./assets/js/slick.min.js"></script>
+
+    <!-- One Page, Animated-HeadLin -->
+    <script th:src="@{#{web.root}+'assets/js/wow.min.js'}"
+            src="./assets/js/wow.min.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/animated.headline.js'}"
+            src="./assets/js/animated.headline.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/jquery.magnific-popup.js'}"
+            src="./assets/js/jquery.magnific-popup.js"></script>
+
+    <!-- Scrollup, nice-select, sticky -->
+    <script th:src="@{#{web.root}+'assets/js/jquery.scrollUp.min.js'}"
+            src="./assets/js/jquery.scrollUp.min.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/jquery.nice-select.min.js'}"
+            src="./assets/js/jquery.nice-select.min.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/jquery.sticky.js'}"
+            src="./assets/js/jquery.sticky.js"></script>
+
+    <!-- contact js -->
+    <script th:src="@{#{web.root}+'assets/js/contact.js'}"
+            src="./assets/js/contact.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/jquery.form.js'}"
+            src="./assets/js/jquery.form.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/jquery.validate.min.js'}"
+            src="./assets/js/jquery.validate.min.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/mail-script.js'}"
+            src="./assets/js/mail-script.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/jquery.ajaxchimp.min.js'}"
+            src="./assets/js/jquery.ajaxchimp.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script th:src="@{#{web.root}+'assets/js/plugins.js'}"
+            src="./assets/js/plugins.js"></script>
+    <script th:src="@{#{web.root}+'assets/js/main.js'}"
+            src="./assets/js/main.js"></script>
+
+
+    </body>
+</html>

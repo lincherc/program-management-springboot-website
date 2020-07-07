@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+<!-- client review part here -->
+<section th:fragment="section_view" class="client_review">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="client_review_slider owl-carousel">
+                    <div class="single_client_review">
+                        <div class="client_img">
+                            <img th:src="@{#{web.site.image}+'qianweichang.jpg'}" src="assets/img/client.png" alt="#">
+                        </div>
+                        <p>"那种把学科与学科之间界限划得很严、各种专业分工过细、互不通气的孤立状态必须打破。"</p>
+                        <h5>- 钱伟长</h5>
+                    </div>
+                    <div class="single_client_review">
+                        <div class="client_img">
+                            <img th:src="@{#{web.site.image}+'金东寒.jpg'}" src="assets/img/client_1.png" alt="#">
+                        </div>
+                        <p>"我来上大后辞掉了差不多将近30个职务，之前的所有职务都辞掉了。本来他们也想让我兼职，但我自己不想做，因为当校长这个工作实在太有挑战性了。我全心全意地做，都不一定能做好，如果半心半意做，肯定做不好，既然答应了，我就要全力以赴。"</p>
+                        <h5>- 上海大学前任校长金东寒</h5>
+                    </div>
+                    <div class="single_client_review">
+                        <div class="client_img">
+                            <img th:src="@{#{web.site.image}+'jobs.jpg'}" src="assets/img/client_2.png" alt="#">
+                        </div>
+                        <p>"如果你感到生活枯燥无味，学的都是没用的，那么，趁早结束这场闹剧吧。解放自己，把自己投入到喜欢的事业中，打游戏、购物、烹饪，去发现新方法、新思想、新世界。"</p>
+                        <h5>- 乔布斯</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- client review part end -->
+
+<!-- Shop Method Start-->
+<div th:fragment="div_shop" class="shop-method-area section-padding30">
+    <div class="container">
+        <div class="row d-flex justify-content-between">
+            <div class="col-xl-3 col-lg-3 col-md-6">
+                <div class="single-method mb-40">
+                    <i class="ti-package"></i>
+                    <h6>包裹式托管</h6>
+                    <p>可托管的项目管理模块，让这里把你的项目管理的井井有条</p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6">
+                <div class="single-method mb-40">
+                    <i class="ti-unlock"></i>
+                    <h6>Spring Security核心引擎</h6>
+                    <p>Spring Security验证，保护敏感数据安全无虞</p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6">
+                <div class="single-method mb-40">
+                    <i class="ti-reload"></i>
+                    <h6>人性化的审批流程</h6>
+                    <p>相较于传统纸质审核，这里能让你的效率翻了一倍</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Shop Method End-->
+
+
+<footer th:fragment="footer">
+
+    <!-- Footer Start-->
+    <div class="footer-area footer-padding">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
+                    <div class="single-footer-caption mb-50">
+                        <div class="single-footer-caption mb-30">
+                            <!-- logo -->
+                            <div class="footer-logo">
+                                <a href="#"><img th:src="@{#{web.site.image}+'shu2.jpg'}" src="assets/img/logo/logo2_footer.png" alt="图片加载失败"></a>
+                            </div>
+                            <div class="footer-tittle">
+                                <div class="footer-pera">
+                                    <p>自强不息，先天下之忧而忧，后天下之乐而乐</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
+                    <div class="single-footer-caption mb-50">
+                        <div class="footer-tittle">
+                            <h4>快速链接</h4>
+                            <ul>
+
+                                <li><a href="https://newsso.shu.edu.cn/login">上大PIM</a></li>
+                                <li><a href="http://www.xxgk.shu.edu.cn/">上大信息公开</a></li>
+                                <li><a href="http://iglobal.shu.edu.cn/shanghai_ghc/overseas_student.do">海外实习与留学</a></li>
+                                <li><a href="http://www.jwc.shu.edu.cn/">上大教务处</a></li>
+                                <li><a href="http://zdpyc.shu.edu.cn/">上大一网通办</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
+                    <div class="single-footer-caption mb-50">
+                        <div class="footer-tittle">
+                            <h4>上大研究</h4>
+                            <ul>
+                                <li><a href="http://news.shu.edu.cn/index/kydt.htm">科研动态</a></li>
+                                <li><a href="http://cxglb.shu.edu.cn/">创新管理部（科技处）</a></li>
+                                <li><a href="http://www.rwskc.shu.edu.cn/">创新管理部（人文处）</a></li>
+                                <!--
+                                <li><a href="#"> Rubber made Toys</a></li>
+                                -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
+                    <div class="single-footer-caption mb-50">
+                        <div class="footer-tittle">
+                            <h4>教学资源</h4>
+                            <ul>
+                                <li><a href="http://www.elearning.shu.edu.cn/portal">上大网上教学平台</a></li>
+                                <li><a href="http://www.lib.shu.edu.cn/">上大图书馆</a></li>
+
+                            <!--      <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Report a Payment Issue</a></li>
+                                -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer bottom -->
+            <div class="row">
+                <div class="col-xl-7 col-lg-7 col-md-7">
+                    <div class="footer-copy-right">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>                   </div>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-5">
+                    <div class="footer-copy-right f-right">
+                        <!-- social -->
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                            <a href="#"><i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End-->
+
+</footer>
+
+
+</body>
+</html>
